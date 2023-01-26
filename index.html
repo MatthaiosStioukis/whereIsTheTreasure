@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="utf-8">
+        <title>Where is the treasure?</title>
+        <style>
+            body{
+                font-family: 'Amatic SC', cursive;
+                font-family: 'Ubuntu Mono', monospace;
+            }
+            div#container {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            div#coordinates {
+                display: flex;
+                justify-content: center;
+            }
+        </style>
+        <script>
+            window.onload = init;
+
+            function init() {
+                var map = document.getElementById("map");
+                map.onmousemove = showCoords;
+            }
+            
+            function showCoords(eventObj) {
+                var x = eventObj.clientX;
+                var y = eventObj.clientY;
+                var updatX = document.getElementById("x");
+                var updatY = document.getElementById("y");
+                updatX.innerHTML = x;
+                updatY.innerHTML = y;
+            }
+        </script>
+    </head>
+    <body>
+     <div id="container">
+        <img id="map" src="images/map.jpg" alt="The treasure map."/>
+     </div>
+     <div id="coordinates">
+        <h1>Coordinates: <span id="x">0</span>,<span id="y">0</span></h1>
+     </div>
+    </body>
+</html>
